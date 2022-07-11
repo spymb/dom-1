@@ -6,18 +6,18 @@ window.dom = {
         container.innerHTML = string.trim();
         return container.content.firstChild;
     },
-    after(node, node1) {
-        node.parentNode.insertBefore(node1, node.nextSibling);
+    after(node, oldNode) {
+        oldNode.parentNode.insertBefore(node, oldNode.nextSibling);
     },
-    before(node, node0) {
-        node.parentNode.insertBefore(node0, node);
+    before(node, oldNode) {
+        oldNode.parentNode.insertBefore(node, oldNode);
     },
-    append(parent, node) {//新增子节点
-        parent.appendChild(node);
+    append(child, parent) {//新增子节点
+        parent.appendChild(child);
     },
-    wrap(node, parent) {//新增父节点
-        dom.before(node, parent);
-        dom.append(parent, node);
+    wrap(child, parent) {//新增父节点
+        dom.before(parent, child);
+        dom.append(child, parent);
     },
     //删
     remove(node) {
@@ -127,7 +127,9 @@ window.dom = {
         }
         return x;
     },
-    each(nodeList, fn) {//遍历所有节点并对其操作
+    each(node, fn) {//遍历所有子节点并对其操作
+        const n = dom.find(node)[0]
+        const nodeList = dom.children(n)
         for (let i = 0; i < nodeList.length; i++) {
             fn.call(null, nodeList[i]);
         }
