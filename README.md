@@ -3,9 +3,9 @@
 
 提供了元素的创建、插入、删除、清空、查找、事件监听等一些系列 API。
 
-对象风格：[https://github.com/spymb/dom-1/blob/master/src/dom1.js](http://)
+对象风格：<https://github.com/spymb/dom-1/blob/master/src/dom1.js>
 
-jQuery 风格：[https://github.com/spymb/dom-1/blob/master/src/dom2.js](http://)
+jQuery 风格：<https://github.com/spymb/dom-1/blob/master/src/dom2.js>
 
 # 开发
 
